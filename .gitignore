@@ -174,3 +174,4 @@ cython_debug/
 .pypirc
 slee.zip
 main.py
+receipt_dataset/
