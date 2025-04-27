@@ -8,8 +8,18 @@ from pdf2image import convert_from_bytes
 import pytesseract
 from torchvision import transforms, models
 from transformers import TrOCRProcessor, VisionEncoderDecoderModel, BertTokenizer, BertModel
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Device
 # DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
